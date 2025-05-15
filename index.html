@@ -4,40 +4,18 @@
   <meta charset="UTF-8" />
   <title>자판기 시뮬레이터</title>
   <style>
-    body {
-      font-family: sans-serif;
-      padding: 20px;
-    }
-    button {
-      margin: 5px;
-      padding: 10px 15px;
-      cursor: pointer;
-    }
-    .product-btn {
-      background-color: #eee;
-      border: 1px solid #aaa;
-    }
-    .product-btn.active {
-      background-color: #4CAF50;
-      color: white;
-      font-weight: bold;
-    }
-    section {
-      margin-bottom: 20px;
-    }
-    #log {
-      white-space: pre-line;
-      background: #f4f4f4;
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
+    body { font-family: sans-serif; padding: 20px; }
+    button { margin: 5px; padding: 10px 15px; }
+    .product-btn { background-color: #eee; border: 1px solid #aaa; }
+    .product-btn.active { background-color: #4CAF50; color: white; font-weight: bold; }
+    #log { white-space: pre-line; background: #f4f4f4; padding: 10px; border: 1px solid #ccc; }
   </style>
 </head>
 <body>
 
 <h1>🥤 자판기 시뮬레이터</h1>
 
-<!-- 1. 음료 선택 버튼 -->
+<!-- UC1: 음료 선택 -->
 <section>
   <h3>1. 음료 선택</h3>
   <div id="productButtons">
@@ -47,15 +25,15 @@
   </div>
 </section>
 
-<!-- 2. 결제 수단 선택 -->
+<!-- UC2: 결제 수단 선택 -->
 <section>
   <h3>2. 결제 수단</h3>
   <label><input type="radio" name="paymentMethod" value="cash" /> 현금</label>
   <label><input type="radio" name="paymentMethod" value="card" /> 카드</label>
 </section>
 
-<!-- 3. 현금 투입 버튼 -->
-<section id="cash-payment" style="display: none;">
+<!-- UC3: 현금 투입 -->
+<section id="cash-payment" style="display:none;">
   <h3>3. 현금 투입</h3>
   <div id="cash-buttons">
     <button data-cash="100">100원</button>
@@ -67,12 +45,12 @@
   <p id="insertedDisplay">투입 금액: 0원</p>
 </section>
 
-<!-- 4. 결제 버튼 -->
+<!-- UC4: 결제 확인 및 처리 -->
 <section>
   <button id="confirmPaymentBtn">💳 결제하기</button>
 </section>
 
-<!-- 5. 상태 및 로그 -->
+<!-- 로그 출력 -->
 <section>
   <h3>📝 상태 / 로그</h3>
   <div id="log"></div>
